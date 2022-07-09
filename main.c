@@ -391,9 +391,9 @@ char backgroundBuf[strlen(cmd2)];//提取数组
     }
 }
 
-int main()
-{	mystdout=dup(STDOUT_FILENO);
-mystdin=dup(STDIN_FILENO);
+int main()//主函数
+{	mystdout=dup(STDOUT_FILENO);//恢复原始指向
+mystdin=dup(STDIN_FILENO);//恢复原始指向
 	while(1)
   {	dup2(mystdout,STDOUT_FILENO);
 		dup2(mystdin,STDIN_FILENO);
